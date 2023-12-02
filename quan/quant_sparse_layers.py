@@ -1,6 +1,6 @@
 import torch as t
 from .quantizer.lsq import LsqQuanSRP,LsqQuanSparseSRP_feng, LsqQuanSRP_acti
-//build the convolution, fc operator
+//build the convolution, fc operator with sparsity
 class QuanSparseLinearSRP_feng(t.nn.Linear):
     def __init__(self, in_features, out_features, sparsity=0.0, TIN=8, group_size=2, bias=True,weight_bit_width=2,activation_bit_width=8):
         super().__init__(in_features, out_features, bias)
