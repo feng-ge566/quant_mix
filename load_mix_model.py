@@ -18,7 +18,6 @@ import torch.nn as nn
 # args = p.parse_args()
 # # setattr(args.dataloader, 'dataset', 'imagenet')
 # model = create_model(args)
-# pre_location = "/home/dingchenchen/test_quant/lsq_sparse/out/VGG16_ImageNet_bmix_s0_20230227-211651/VGG16_ImageNet_bmix_s0_best.pth.tar"
 
 # def load_model_from_fp(model, fp_dict):
 #     state_dict = load_state_dict_from_url('https://download.pytorch.org/models/vgg16-397923af.pth',progress=progress)
