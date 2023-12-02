@@ -1,7 +1,7 @@
 # quant_mix
 quantization with Weight-Constrained-and-Encoded and log2 scale(friendly to hardware)
 
-#directory quan; execute the quantization and mapping
+#/quan; execute the quantization and mapping
 
 #quant_sparse_layers; block of cnn model
 
