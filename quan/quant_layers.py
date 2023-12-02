@@ -1,5 +1,5 @@
 import torch as t
-from .quantizer.lsq import LsqQuanSRP,LsqQuanSparseSRP_Kai
+from .quantizer.lsq import LsqQuanSRP,LsqQuanSparseSRP_feng
 # class QuanConv2d(t.nn.Conv2d):
 #     def __init__(self, m: t.nn.Conv2d, quan_w_fn=None, quan_a_fn=None):
 #         assert type(m) == t.nn.Conv2d
@@ -22,7 +22,7 @@ from .quantizer.lsq import LsqQuanSRP,LsqQuanSparseSRP_Kai
 #         quantized_weight = self.quan_w_fn(self.weight)
 #         quantized_act = self.quan_a_fn(x)
 #         return self._conv_forward(quantized_act, quantized_weight)
-
+//build the quan conv, fc layer without sparsity
 class QuanConv2d(t.nn.Conv2d):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1,padding=0,dilation=1,groups=1,bias=True,padding_mode='zeros',weight_bit_width=8,act_bit_width=8,bias_bit_width=8):
         super().__init__(in_channels, out_channels, kernel_size,
