@@ -1,7 +1,7 @@
 import torch as t
-from .quantizer.lsq import LsqQuanSRP,LsqQuanSparseSRP_Kai, LsqQuanSRP_acti
-
-class QuanSparseLinearSRP_Kai(t.nn.Linear):
+from .quantizer.lsq import LsqQuanSRP,LsqQuanSparseSRP_feng, LsqQuanSRP_acti
+//build the convolution, fc operator
+class QuanSparseLinearSRP_feng(t.nn.Linear):
     def __init__(self, in_features, out_features, sparsity=0.0, TIN=8, group_size=2, bias=True,weight_bit_width=2,activation_bit_width=8):
         super().__init__(in_features, out_features, bias)
         self.use_bias = bias
@@ -11,7 +11,7 @@ class QuanSparseLinearSRP_Kai(t.nn.Linear):
         self.group_size = group_size
         self.weight_bit_width = weight_bit_width
         self.activation_bit_width = activation_bit_width
-        self.quan_w_fn = LsqQuanSparseSRP_Kai(bit=weight_bit_width,weight= self.weight,
+        self.quan_w_fn = LsqQuanSparseSRP_feng(bit=weight_bit_width,weight= self.weight,
                                               sparsity=self.sparsity, 
                                               TIN = self.TIN,
                                               group_size = self.group_size,
@@ -65,7 +65,7 @@ class QuanSparseLinearSRP_Kai(t.nn.Linear):
         return self._calculate_coded_complexity()/1024/1024
     
 
-class QuanSparseConv2dSRP_Kai(t.nn.Conv2d):
+class QuanSparseConv2dSRP_feng(t.nn.Conv2d):
     def __init__(self, in_channels, out_channels, kernel_size, 
                  sparsity=0.0, TIN=8, group_size=2,
                  stride=1,padding=0,dilation=1,groups=1,bias=True,padding_mode='zeros',weight_bit_width=2,activation_bit_width=8):
@@ -82,7 +82,7 @@ class QuanSparseConv2dSRP_Kai(t.nn.Conv2d):
         self.group_size = group_size
         self.weight_bit_width = weight_bit_width
         self.activation_bit_width = activation_bit_width
-        self.quan_w_fn = LsqQuanSparseSRP_Kai(bit=self.weight_bit_width,weight= self.weight,
+        self.quan_w_fn = LsqQuanSparseSRP_feng(bit=self.weight_bit_width,weight= self.weight,
                                                   sparsity=self.sparsity, 
                                                   TIN = self.TIN,
                                                   group_size = self.group_size,
