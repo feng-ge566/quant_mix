@@ -57,9 +57,9 @@ def main():
     model = create_model(args)
     # print(model)
     
-    state_dict =t.load('/home/likai/mix_vgg/vgg_quant_test/lsq_sparse/out/VGG16_ImageNet_bmix_s0_20230521-044956/VGG16_ImageNet_bmix_s0_best.pth.tar')['state_dict']
-    #state_dict =t.load("/home/gaoconghao/mix_lcd/quant_mix_lr/out/vgg863_64/VGG16_ImageNet_bmix_s0_1bit_best.pth.tar")['state_dict']
-    #state_dict =t.load("/home/gaoconghao/mix_lcd/quant_mix_lr/out/vgg16_70/VGG16_ImageNet_bmix_s0_1bit_best.pth.tar")['state_dict']
+    state_dict =t.load('/home/liqiufeng/mix_vgg/vgg_quant_test/lsq_sparse/out/VGG16_ImageNet_bmix_s0_20230521-044956/VGG16_ImageNet_bmix_s0_best.pth.tar')['state_dict']
+    #state_dict =t.load("/home/liqiufeng/mix_lcd/quant_mix_lr/out/vgg863_64/VGG16_ImageNet_bmix_s0_1bit_best.pth.tar")['state_dict']
+    #state_dict =t.load("/home/liqiufeng/mix_lcd/quant_mix_lr/out/vgg16_70/VGG16_ImageNet_bmix_s0_1bit_best.pth.tar")['state_dict']
    
 
     tbmonitor.writer.add_graph(model, input_to_model=train_loader.dataset[0][0].unsqueeze(0))
