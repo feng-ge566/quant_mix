@@ -1,0 +1,1 @@
+python main_train_vgg16_int863.py /home/liqiufeng/mix_lcd/quant_mix_lr/examples/lsq/vgg16_bmix_s0_1bit_imagenet.yaml > training_int864_noacti.log

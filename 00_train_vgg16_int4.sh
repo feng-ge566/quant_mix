@@ -1,0 +1,1 @@
+python main_train_vgg16_int4.py /home/liqiufeng/mix_lcd/quant_mix_lr/examples/lsq/vgg16_bmix_s0_4bit_imagenet.yaml > training_int4.log
